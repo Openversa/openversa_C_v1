@@ -180,13 +180,13 @@ static const char *test_step_desc[] = {
 	"11: Show all members of 'OV_Test_ABCDEF'; 'Sally Jones' should have been removed",
 	"12: Send 3 messages to 'OV_Test_ABCDEF'",
 	"13: Get messages sent to 'OV_Test_ABCDEF' - Should see 'OpenVersa API Test Message'",
-	"14: Remove all messages from the group 'SprinkerScrooge_ABCDEF'",
+	"14: Remove all messages from the group 'examplegroup'",
 	"15: Get messages sent to 'OV_Test_ABCDEF'. Should be empty",
-	"16: Get file list for group 'SprinkerScrooge_ABCDEF'. Should be empty",
-	"17: upload file 'abc.txt' group 'SprinkerScrooge_ABCDEF'",
-	"18: get file list for group 'SprinkerScrooge_ABCDEF', is 'abc.txt' there?",
-	"19: download file 'abc.txt' group 'SprinkerScrooge_ABCDEF'",
-	"20: delete group 'SprinkerScrooge_ABCDEF'",
+	"16: Get file list for group 'examplegroup'. Should be empty",
+	"17: upload file 'abc.txt' group 'examplegroup'",
+	"18: get file list for group 'examplegroup', is 'abc.txt' there?",
+	"19: download file 'abc.txt' group 'examplegroup'",
+	"20: delete group 'examplegroup'",
 	"21: get group list again, group should have gone",
 	"22: The End!",
 };
@@ -215,8 +215,8 @@ int main(int argc, char *argv[])
 		case 1: /* get group list */
 			rc = demo_print_group_list(ov_handle, 0);
 			break;
-		case 2: /* create new group "SprinkerScrooge_ABCDEF" */
-			if ((msg_handle = ov_create_group(ov_handle, "SprinkerScrooge_ABCDEF"))) {
+		case 2: /* create new group "examplegroup" */
+			if ((msg_handle = ov_create_group(ov_handle, "examplegroup"))) {
 				ov_msg_cleanup(msg_handle);
 			}
 			rc = msg_handle ? 0 : 1;
@@ -224,8 +224,8 @@ int main(int argc, char *argv[])
 		case 3: /* get group list again, has new group been added? */
 			rc = demo_print_group_list(ov_handle, 0);
 			break;
-		case 4: /* delete group "SprinkerScrooge_ABCDEF" */
-			if ((msg_handle = ov_delete_group(ov_handle, "SprinkerScrooge_ABCDEF"))) {
+		case 4: /* delete group "examplegroup" */
+			if ((msg_handle = ov_delete_group(ov_handle, "examplegroup"))) {
 				ov_msg_cleanup(msg_handle);
 			}
 			rc = msg_handle ? 0 : 1;
@@ -233,8 +233,8 @@ int main(int argc, char *argv[])
 		case 5: /* get group list again, group should have gone */
 			rc = demo_print_group_list(ov_handle, 0);
 			break;
-		case 6: /* create new group "SprinkerScrooge_ABCDEF" again */
-			if ((msg_handle = ov_create_group(ov_handle, "SprinkerScrooge_ABCDEF"))) {
+		case 6: /* create new group "examplegroup" again */
+			if ((msg_handle = ov_create_group(ov_handle, "examplegroup"))) {
 				ov_msg_cleanup(msg_handle);
 			}
 			rc = msg_handle ? 0 : 1;
@@ -251,9 +251,9 @@ int main(int argc, char *argv[])
 			rc = msg_handle ? 0 : 1;
 			break;
 		}
-		case 8: { /* Add a member to "SprinkerScrooge_ABCDEF" */
+		case 8: { /* Add a member to "examplegroup" */
 			ov_member_param_t mp = {
-				.group_name = "SprinkerScrooge_ABCDEF",
+				.group_name = "examplegroup",
 				.first = "Sally",                    // the first name
 				.last = "Jones",                     // the last name
 				.phone = "3105551212",                    // the US phone number no special characters or white space (if type SMS)
@@ -266,16 +266,16 @@ int main(int argc, char *argv[])
 			rc = msg_handle ? 0 : 1;
 			break;
 		}
-		case 9: /* Show all members of "SprinkerScrooge_ABCDEF"; "Sally Jones" should have been added */
-			rc = demo_print_member_list(ov_handle, "SprinkerScrooge_ABCDEF", 0);
+		case 9: /* Show all members of "examplegroup"; "Sally Jones" should have been added */
+			rc = demo_print_member_list(ov_handle, "examplegroup", 0);
 			break;
-		case 10: { /* Delete "Sally Jones" from group "SprinkerScrooge_ABCDEF" */
+		case 10: { /* Delete "Sally Jones" from group "examplegroup" */
 			/* Scan the member list to find the member ID for Sally Jones */
 			ov_member_list_t mp = {
 				.entry_count = -1,
 				.group_id = 0
 			};
-			if ((msg_handle = ov_get_member_list(ov_handle, "SprinkerScrooge_ABCDEF", &mp))) {
+			if ((msg_handle = ov_get_member_list(ov_handle, "examplegroup", &mp))) {
 				ov_member_status_t *me;
 				for (i = 0, me = mp.entries; i < mp.entry_count; i++, me++) {
 					if (strcmp(me->first_name, "Sally") || strcmp(me->last_name, "Jones")) {
@@ -283,7 +283,7 @@ int main(int argc, char *argv[])
 						continue;
 					}
 					/* found it - delete it */
-					if ((msg_handle2 = ov_delete_member(ov_handle, "SprinkerScrooge_ABCDEF", me->id))) {
+					if ((msg_handle2 = ov_delete_member(ov_handle, "examplegroup", me->id))) {
 						ov_msg_cleanup(msg_handle2);
 					}
 					rc = msg_handle2 ? 0 : 1;
@@ -297,10 +297,10 @@ int main(int argc, char *argv[])
 			}
 			break;
 		}
-		case 11: /* Show all members of "SprinkerScrooge_ABCDEF"; "Sally Jones" should have been removed */
-			rc = demo_print_member_list(ov_handle, "SprinkerScrooge_ABCDEF", 0);
+		case 11: /* Show all members of "examplegroup"; "Sally Jones" should have been removed */
+			rc = demo_print_member_list(ov_handle, "examplegroup", 0);
 			break;
-		case 12: { /* Send 3 messages to "SprinkerScrooge_ABCDEF" */
+		case 12: { /* Send 3 messages to "examplegroup" */
 			ov_create_message_t cm = {
 				.group = "SprinkerScrooge_ABCDEF",
 				.notify_member = 1,
@@ -315,15 +315,15 @@ int main(int argc, char *argv[])
 			}
 			break;
 		}
-		case 13: /* Retrieve the messages that were sent to "SprinkerScrooge_ABCDEF".
+		case 13: /* Retrieve the messages that were sent to "examplegroup".
                   * Should see "OpenVersa API Test Message" in the list
                   */
-			rc = demo_print_messages(ov_handle, "SprinkerScrooge_ABCDEF", 0);
+			rc = demo_print_messages(ov_handle, "examplegroup", 0);
 			break;
-		case 14: { /* Remove all messages from the group "SprinkerScrooge_ABCDEF" */
+		case 14: { /* Remove all messages from the group "examplegroup" */
 			ov_get_message_t *ms;
 			ov_get_message_list_t mp = {};
-			if ((msg_handle = ov_get_messages(ov_handle, "SprinkerScrooge_ABCDEF", &mp))) {
+			if ((msg_handle = ov_get_messages(ov_handle, "examplegroup", &mp))) {
 				for (i = 0, ms = mp.messages; rc == 0 && (i < mp.entry_count); i++, ms++) {
 					if ((msg_handle2 = ov_delete_message(ov_handle, ms->id))) {
 						ov_msg_cleanup(msg_handle2);
@@ -334,15 +334,15 @@ int main(int argc, char *argv[])
 			rc |= msg_handle ? 0 : 1;
 			break;
 		}
-		case 15: /* Retrieve the messages that were sent to "SprinkerScrooge_ABCDEF".
+		case 15: /* Retrieve the messages that were sent to "examplegroup".
                   * Should be empty
                   */
-			rc = demo_print_messages(ov_handle, "SprinkerScrooge_ABCDEF", 0);
+			rc = demo_print_messages(ov_handle, "examplegroup", 0);
 			break;
-		case 16: /* get file list for group "SprinkerScrooge_ABCDEF", should be empty */
-            rc = demo_print_file_list(ov_handle, "SprinkerScrooge_ABCDEF");
+		case 16: /* get file list for group "examplegroup", should be empty */
+            rc = demo_print_file_list(ov_handle, "examplegroup");
 			break;
-		case 17: { /* upload file "abc.txt" group "SprinkerScrooge_ABCDEF" */
+		case 17: { /* upload file "abc.txt" group "examplegroup" */
             FILE *fp = fopen("abc.txt", "w");
             if (fp)  {
                 ov_put_file_param_t pfp = {
@@ -353,23 +353,23 @@ int main(int argc, char *argv[])
                 fwrite("TEST\n", 1, sizeof("TEST\n"), fp);
                 fclose(fp);
 
-                if ((msg_handle = ov_put_file(ov_handle, "SprinkerScrooge_ABCDEF", &pfp))) {
+                if ((msg_handle = ov_put_file(ov_handle, "examplegroup", &pfp))) {
                     ov_msg_cleanup(msg_handle);
                 }
             }
 			rc = msg_handle ? 0 : 1;
 			break;
         }
-		case 18: /* get file list for group "SprinkerScrooge_ABCDEF", is "abc.txt" there? */
-            rc = demo_print_file_list(ov_handle, "SprinkerScrooge_ABCDEF");
+		case 18: /* get file list for group "examplegroup", is "abc.txt" there? */
+            rc = demo_print_file_list(ov_handle, "examplegroup");
 			break;
-		case 19: { /* download file "abc.txt" group "SprinkerScrooge_ABCDEF" */
+		case 19: { /* download file "abc.txt" group "examplegroup" */
 #if 1 // NOT_YET
             ov_get_file_param_t gfp = {
                 .name = "abc.txt",
                 .local_path = "def.txt"
             };
-			if ((msg_handle = ov_get_file(ov_handle, "SprinkerScrooge_ABCDEF", &gfp))) {
+			if ((msg_handle = ov_get_file(ov_handle, "examplegroup", &gfp))) {
 				ov_msg_cleanup(msg_handle);
 			}
 			rc = msg_handle ? 0 : 1;
@@ -378,8 +378,8 @@ int main(int argc, char *argv[])
 #endif // NOT_YET
 			break;
         }
-		case 20: /* delete group "SprinkerScrooge_ABCDEF" */
-			if ((msg_handle = ov_delete_group(ov_handle, "SprinkerScrooge_ABCDEF"))) {
+		case 20: /* delete group "examplegroup" */
+			if ((msg_handle = ov_delete_group(ov_handle, "examplegroup"))) {
 				ov_msg_cleanup(msg_handle);
 			}
 			rc = msg_handle ? 0 : 1;
