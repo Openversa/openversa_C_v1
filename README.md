@@ -17,7 +17,24 @@ An Account owner is the same name as your username is automatically created for 
 
 
 <h3>Container Data Model & Object Hierarchy Concept</h3>
-
+#content .body p > code {
+  display: block;
+  padding: 15px;
+  white-space: pre;
+}
+#content .body code {
+  border: 1px solid #e2e7ea;
+  background: #31373A;
+  border-radius: 2px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  color: #C1EF65;
+  padding: 0 1px;
+}
+code {
+  font-family: 'Courier', monospace, sans-serif;
+}
+<code>
 Account Owner (main root, app id and secret key)
     {
        Groups (containers) 
@@ -41,7 +58,7 @@ Account Owner (main root, app id and secret key)
             Properties
          }
      }
-
+</code>
 <h4>Account Owner:</h4> This is the root and owner of the groups. Once you are registered with Openversa as a developer, you will get assigned an application ID and secret key.
 
 <h4>Groups:</h4> Groups are containers that contain members, storage, rules, analytics and devices.
