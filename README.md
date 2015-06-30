@@ -20,28 +20,28 @@ An Account owner is the same name as your username is automatically created for 
 
 
 Account Owner (main root, app id and secret key)
-    &nbsp;&nbsp;{
-       &nbsp;&nbsp;&nbsp;Groups (containers) 
-         &nbsp;&nbsp;&nbsp;{
-            &nbsp;&nbsp;&nbsp;&nbsp;Members (1 or many, people, devices, accounts)
-            &nbsp;&nbsp;&nbsp;&nbsp;Messages (outgoing, incoming)
-            &nbsp;&nbsp;&nbsp;&nbsp;Files (storage) 
-            &nbsp;&nbsp;&nbsp;&nbsp;Datastore
-            &nbsp;&nbsp;&nbsp;&nbsp;Business rules
-            &nbsp;&nbsp;&nbsp;&nbsp;Analytics
-            &nbsp;&nbsp;&nbsp;&nbsp;Properties
-         &nbsp;&nbsp;&nbsp;}
-       &nbsp;&nbsp;&nbsp;Groups (containers) 
-         &nbsp;&nbsp;&nbsp;{
-            &nbsp;&nbsp;&nbsp;&nbsp;Members (1 or many, people, devices, accounts)
-            &nbsp;&nbsp;&nbsp;&nbsp;Messages (outgoing, incoming)
-            &nbsp;&nbsp;&nbsp;&nbsp;Files (storage) 
-            &nbsp;&nbsp;&nbsp;&nbsp;Datastore
-            &nbsp;&nbsp;&nbsp;&nbsp;Business rules
-            &nbsp;&nbsp;&nbsp;&nbsp;Analytics
-            &nbsp;&nbsp;&nbsp;&nbsp;Properties
-         &nbsp;&nbsp;&nbsp;}
-     &nbsp;&nbsp;}
+    <br>&nbsp;&nbsp;{
+       <br>&nbsp;&nbsp;&nbsp;Groups (containers) 
+         <br>&nbsp;&nbsp;&nbsp;{
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;Members (1 or many, people, devices, accounts)
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;Messages (outgoing, incoming)
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;Files (storage) 
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;Datastore
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;Business rules
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;Analytics
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;Properties
+         <br>&nbsp;&nbsp;&nbsp;}
+       <br>&nbsp;&nbsp;&nbsp;Groups (containers) 
+         <br>&nbsp;&nbsp;&nbsp;{
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;Members (1 or many, people, devices, accounts)
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;Messages (outgoing, incoming)
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;Files (storage) 
+            <br><br>&nbsp;&nbsp;&nbsp;&nbsp;Datastore
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;Business rules
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;Analytics
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;Properties
+         <br>&nbsp;&nbsp;&nbsp;}
+     <br>&nbsp;&nbsp;}
 
 <h4>Account Owner:</h4> This is the root and owner of the groups. Once you are registered with Openversa as a developer, you will get assigned an application ID and secret key.
 
