@@ -17,6 +17,7 @@ An Account owner is the same name as your username is automatically created for 
 
 
 <h3>Container Data Model & Object Hierarchy Concept</h3>
+<style>
 #content .body p > code {
   display: block;
   padding: 15px;
@@ -34,6 +35,7 @@ An Account owner is the same name as your username is automatically created for 
 code {
   font-family: 'Courier', monospace, sans-serif;
 }
+</style>
 <code>
 Account Owner (main root, app id and secret key)
     {
