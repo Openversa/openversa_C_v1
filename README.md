@@ -17,50 +17,32 @@ An Account owner is the same name as your username is automatically created for 
 
 
 <h3>Container Data Model & Object Hierarchy Concept</h3>
-<style>
-#content .body p > code {
-  display: block;
-  padding: 15px;
-  white-space: pre;
-}
-#content .body code {
-  border: 1px solid #e2e7ea;
-  background: #31373A;
-  border-radius: 2px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  color: #C1EF65;
-  padding: 0 1px;
-}
-code {
-  font-family: 'Courier', monospace, sans-serif;
-}
-</style>
-<code>
+
+
 Account Owner (main root, app id and secret key)
-    {
-       Groups (containers) 
-         {
-            Members (1 or many, people, devices, accounts)
-            Messages (outgoing, incoming)
-            Files (storage) 
-            Datastore
-            Business rules
-            Analytics
-            Properties
-         }
-       Groups (containers) 
-         {
-            Members (1 or many, people, devices, accounts)
-            Messages (outgoing, incoming)
-            Files (storage) 
-            Datastore
-            Business rules
-            Analytics
-            Properties
-         }
-     }
-</code>
+    &nbsp;&nbsp;{
+       &nbsp;&nbsp;&nbsp;Groups (containers) 
+         &nbsp;&nbsp;&nbsp;{
+            &nbsp;&nbsp;&nbsp;&nbsp;Members (1 or many, people, devices, accounts)
+            &nbsp;&nbsp;&nbsp;&nbsp;Messages (outgoing, incoming)
+            &nbsp;&nbsp;&nbsp;&nbsp;Files (storage) 
+            &nbsp;&nbsp;&nbsp;&nbsp;Datastore
+            &nbsp;&nbsp;&nbsp;&nbsp;Business rules
+            &nbsp;&nbsp;&nbsp;&nbsp;Analytics
+            &nbsp;&nbsp;&nbsp;&nbsp;Properties
+         &nbsp;&nbsp;&nbsp;}
+       &nbsp;&nbsp;&nbsp;Groups (containers) 
+         &nbsp;&nbsp;&nbsp;{
+            &nbsp;&nbsp;&nbsp;&nbsp;Members (1 or many, people, devices, accounts)
+            &nbsp;&nbsp;&nbsp;&nbsp;Messages (outgoing, incoming)
+            &nbsp;&nbsp;&nbsp;&nbsp;Files (storage) 
+            &nbsp;&nbsp;&nbsp;&nbsp;Datastore
+            &nbsp;&nbsp;&nbsp;&nbsp;Business rules
+            &nbsp;&nbsp;&nbsp;&nbsp;Analytics
+            &nbsp;&nbsp;&nbsp;&nbsp;Properties
+         &nbsp;&nbsp;&nbsp;}
+     &nbsp;&nbsp;}
+
 <h4>Account Owner:</h4> This is the root and owner of the groups. Once you are registered with Openversa as a developer, you will get assigned an application ID and secret key.
 
 <h4>Groups:</h4> Groups are containers that contain members, storage, rules, analytics and devices.
