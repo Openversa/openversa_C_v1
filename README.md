@@ -3,7 +3,7 @@ Initial C Binding for REST api.openversa.com interface. The FULL REST API docume
 
 Within the files be sure to replace the API KEY, SECRET and USER EMAIL fields with your openversa development credentials
 
-API Reference
+<h3>API Reference</h3>
 
 The Openversa REST API allows you to create groups, add members, send and process messages across all message channels. You can also upload files for storage, schedule messages and send files across all channel types.
 
