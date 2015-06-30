@@ -36,7 +36,7 @@ Account Owner (main root, app id and secret key)
             <br>&nbsp;&nbsp;&nbsp;&nbsp;Members (1 or many, people, devices, accounts)
             <br>&nbsp;&nbsp;&nbsp;&nbsp;Messages (outgoing, incoming)
             <br>&nbsp;&nbsp;&nbsp;&nbsp;Files (storage) 
-            <br><br>&nbsp;&nbsp;&nbsp;&nbsp;Datastore
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;Datastore
             <br>&nbsp;&nbsp;&nbsp;&nbsp;Business rules
             <br>&nbsp;&nbsp;&nbsp;&nbsp;Analytics
             <br>&nbsp;&nbsp;&nbsp;&nbsp;Properties
